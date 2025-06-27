@@ -8,22 +8,23 @@ async function seed() {
 
     // Insert sample teams
     const teams = await db.insert(team).values([
-      { name: 'Team Alpha' },
-      { name: 'Team Beta' },
-      { name: 'Team Gamma' },
-      { name: 'Team Delta' },
+      { name: 'Dev Builds' },
     ]).returning();
 
     console.log('✅ Teams seeded:', teams.length);
 
     // Insert sample categories
     const categories = await db.insert(category).values([
-      { name: 'Nature' },
-      { name: 'Urban' },
-      { name: 'Portrait' },
-      { name: 'Landscape' },
-      { name: 'Abstract' },
-      { name: 'Street Photography' },
+      { name: 'Opening Ceremony & Kickoff' },
+      { name: 'Workshops & Tech Talks' },
+      { name: 'Team Formation & Brainstorming' },
+      { name: 'Hacking in Progress' },
+      { name: 'Swag & Merchandise' },
+      { name: 'Food & Chill Zones' },
+      { name: 'Mentorship & Guidance' },
+      { name: 'Midnight Vibes & All-Nighters' },
+      { name: 'Judging & Demos' },
+      { name: 'Group Photos & Closing Moments' },
     ]).returning();
 
     console.log('✅ Categories seeded:', categories.length);

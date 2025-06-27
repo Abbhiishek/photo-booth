@@ -4,7 +4,7 @@ export default async function getBase64ImageUrl(
 
   let url = "";
   const response = await fetch(
-    `https://wsrv.nl/?url=${process.env.NEXT_PUBLIC_CDN_URL}/${image}&w=8&h=8&output=jpg&q=70`,
+    `https://wsrv.nl/?url=${process.env.NEXT_PUBLIC_CDN_URL}${image}&q=70&blur=100`,
   );
   const buffer = await response.arrayBuffer();
 

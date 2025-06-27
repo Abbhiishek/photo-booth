@@ -24,7 +24,6 @@ export default function SharedModal({
     range(index - 15, index + 15).includes(img.index),
   );
 
-  console.log("filteredImages", filteredImages);
 
   const handlers = useSwipeable({
     onSwipedLeft: () => {
@@ -67,14 +66,14 @@ export default function SharedModal({
                 className="absolute"
               >
                 <Image
-                  src={`https://wsrv.nl/?url=${process.env.NEXT_PUBLIC_CDN_URL}${currentImage?.photoUrl}&q=100`}
-                  width={currentImage?.metadata?.width || 1920}
-                  height={currentImage?.metadata?.height || 1280}
+                  src={`https://wsrv.nl/?url=${process.env.NEXT_PUBLIC_CDN_URL}${currentImage?.photoUrl}&q=70&w=1920&h=1280`}
+                  width={navigation ? 1280 : 1920}
+                  height={navigation ? 853 : 1280}
                   priority
                   alt={`Team ${currentImage?.team}'s photo`}
                   onLoad={() => setLoaded(true)}
                   aria-label={`Team ${currentImage?.team}'s photo`}
-                  className="w-full h-full object-cover"
+                  className="object-cover w-full h-full"
                 />
               </motion.div>
             </AnimatePresence>
@@ -111,7 +110,7 @@ export default function SharedModal({
               <div className="absolute top-0 right-0 flex items-center gap-2 p-3 text-white">
                 {navigation ? (
                   <a
-                    href={`https://wsrv.nl/?url=${process.env.NEXT_PUBLIC_CDN_URL}${currentImage?.photoUrl}&q=50`}
+                    href={`/p/${index}`}
                     className="rounded-full bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
                     target="_blank"
                     title="Open fullsize version"
@@ -153,7 +152,7 @@ export default function SharedModal({
                 className="mx-auto mt-6 mb-6 flex aspect-[3/2] h-14"
               >
                 <AnimatePresence initial={false}>
-                  {filteredImages?.map(({ photoUrl, id }) => (
+                  {filteredImages?.map(({ photoUrl, index: id }) => (
                     <motion.button
                       initial={{
                         width: "0%",

@@ -117,7 +117,7 @@ export function UploadForm({ teams, categories }: UploadFormProps) {
       },
       error: (error) => {
         setIsUploading(false);
-        return 'Failed to add your memories'
+        return error instanceof Error ? error.message : 'Failed to add your memories'
       },
     })
   }

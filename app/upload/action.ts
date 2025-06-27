@@ -74,9 +74,6 @@ export async function uploadPhotos(formData: UploadFormData) {
     };
   } catch (error) {
     console.error('Upload error:', error);
-    return {
-      success: false,
-      message: error instanceof Error ? error.message : 'Failed to upload photos',
-    };
+    throw error;
   }
 }
