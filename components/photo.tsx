@@ -18,7 +18,7 @@ export default function Photo({
                 alt={`Team ${team}'s photo`}
                 className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110 after:content group relative mb-5 block w-full after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
                 style={{ transform: "translate3d(0, 0, 0)" }}
-                src={`https://wsrv.nl/?url=${process.env.NEXT_PUBLIC_CDN_URL}/${photoUrl}&q=100`}
+                src={`https://wsrv.nl/?url=${process.env.NEXT_PUBLIC_CDN_URL}${photoUrl}&q=30&w=720&h=480&output=webp&af`}
                 width={720}
                 height={480}
                 sizes="(max-width: 640px) 100vw,

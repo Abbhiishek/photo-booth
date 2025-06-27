@@ -8,8 +8,22 @@ async function seed() {
 
     // Insert sample teams
     const teams = await db.insert(team).values([
-      { name: 'Dev Builds' },
-    ]).returning();
+      { name: 'Hackomon' },
+      { name: 'CodeNix' },
+      { name: 'Yin and yang' },
+      { name: 'BongoBoltu' },
+      { name: 'Rebase' },
+      { name: 'Phoenix-Beatle' },
+      { name: 'Innovatio' },
+      { name: 'Bug Hunters' },
+      { name: 'Nclave' },
+      { name: 'Bug Busters' },
+      { name: 'Infinity_loop' },
+      { name: 'ELECTROCODERS' },
+      { name: 'Bit-Wizards' },
+      { name: 'Manotaurs' },
+      { name: 'HexaFalls Officials' },
+    ]).returning().onConflictDoNothing();
 
     console.log('✅ Teams seeded:', teams.length);
 
@@ -25,7 +39,7 @@ async function seed() {
       { name: 'Midnight Vibes & All-Nighters' },
       { name: 'Judging & Demos' },
       { name: 'Group Photos & Closing Moments' },
-    ]).returning();
+    ]).returning().onConflictDoNothing();
 
     console.log('✅ Categories seeded:', categories.length);
 
