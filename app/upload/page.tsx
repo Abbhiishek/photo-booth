@@ -3,6 +3,10 @@ import { team } from '@/db/schema/team';
 import { category } from '@/db/schema/options';
 import { UploadForm } from './upload-form';
 
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default async function UploadPage() {
   // Fetch teams and categories from the database
   const teams = await db.select().from(team);
