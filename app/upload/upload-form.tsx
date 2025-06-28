@@ -291,7 +291,7 @@ export function UploadForm({ teams, categories }: UploadFormProps) {
                         </Badge>
                       ))}
                     </div>
-                    <Input
+                    <Textarea
                       placeholder="Type a tag and press Enter"
                       onKeyDown={(e) => {
                         e.stopPropagation();
