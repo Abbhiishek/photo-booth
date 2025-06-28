@@ -294,6 +294,7 @@ export function UploadForm({ teams, categories }: UploadFormProps) {
                     <Input
                       placeholder="Type a tag and press Enter"
                       onKeyDown={(e) => {
+                        e.stopPropagation();
                         if (e.key === 'Enter') {
                           e.preventDefault();
                           const input = e.currentTarget;
